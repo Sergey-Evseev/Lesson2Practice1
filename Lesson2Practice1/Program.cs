@@ -22,9 +22,8 @@ namespace Lesson2Practice1
             {
                 Console.WriteLine(string.Format("Введите {0}й элемент массива:", i + 1));
                 A[i] = Convert.ToInt32(Console.ReadLine());                                                            
-            }                     
-                        
-
+            }                  
+            
             Random rnd = new Random();
             float[,] B = new float[3, 5];
             for (int i = 0; i < B.GetLength(0); i++)
@@ -32,8 +31,17 @@ namespace Lesson2Practice1
                 for (int j = 0; j < B.GetLength(1); j++)
                     B[i, j] = rnd.Next(1, 10);
             }
+
+            foreach (var item in A)
+            {
+                Console.WriteLine(item);
+            }
+
+            foreach (var item in B)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
         }
-
-
     }
 }
