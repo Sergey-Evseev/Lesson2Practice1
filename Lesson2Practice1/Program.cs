@@ -17,7 +17,7 @@ namespace Lesson2Practice1
     {    
         static void Main(string[] args) 
         {
-            int[] A = new int[5];
+            int[] A = new int[5]; //объявление одномерного
             for (int i = 0; i < A.Length; i++)
             {
                 Console.WriteLine(string.Format("Введите {0}-й элемент массива:", i + 1));
@@ -25,22 +25,31 @@ namespace Lesson2Practice1
             }                  
             
             Random rnd = new Random();
-            float[,] B = new float[3, 5];
+            float[,] B = new float[3, 5]; //объявление двухмерного
             for (int i = 0; i < B.GetLength(0); i++)
             {
                 for (int j = 0; j < B.GetLength(1); j++)
                     B[i, j] = rnd.Next(1, 10);
             }
 
-            foreach (var item in A)
+            foreach (var item in A) //цикл вывода в строку
             {
                 Console.Write(item);
             }
+            Console.Write(Environment.NewLine + Environment.NewLine);
 
-            foreach (var item in B)
+            for (int i = 0; i < B.GetLength(0); i++) //цикл вывода в виде матрицы
             {
-                Console.Write(item);
-            } 
+                for (int j = 0; j < B.GetLength(1); j++)
+                {
+                    Console.Write(string.Format("{0} ", B[i, j]));
+                }
+                Console.Write(Environment.NewLine + Environment.NewLine);
+            }
+
+            int m = A.Max();
+            Console.WriteLine("Maximum value in B array " + m); 
+
             Console.ReadKey(); //аналог system pause
         }
     }
