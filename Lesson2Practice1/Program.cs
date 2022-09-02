@@ -20,7 +20,7 @@ namespace Lesson2Practice1
             int[] A = new int[5];
             for (int i = 0; i < A.Length; i++)
             {
-                Console.WriteLine(string.Format("Введите {0}й элемент массива:", i + 1));
+                Console.WriteLine(string.Format("Введите {0}-й элемент массива:", i + 1));
                 A[i] = Convert.ToInt32(Console.ReadLine());                                                            
             }                  
             
@@ -34,14 +34,14 @@ namespace Lesson2Practice1
 
             foreach (var item in A)
             {
-                Console.WriteLine(item);
+                Console.Write(item);
             }
 
             foreach (var item in B)
             {
-                Console.WriteLine(item);
-            }
-            Console.ReadKey();
+                Console.Write(item);
+            } 
+            Console.ReadKey(); //аналог system pause
         }
     }
 }
